@@ -1,0 +1,18 @@
+[index]
+
+description = "Tools to read and edit PDFs."
+
+tools = [
+    "pdf_tools.get_metadata",
+    "pdf_tools.extract_content_as_text",
+    "pdf_tools.extract_content_as_markdown",
+    "pdf_tools.extract_content_as_json",
+    "pdf_tools.extract_text_with_layout",
+    "pdf_tools.list_annotations",
+    "pdf_tools.add_text",
+    "pdf_tools.replace_text",
+    "pdf_tools.highlight_text",
+    "pdf_tools.insert_image",
+    "pdf_tools.delete_text_by_bbox",
+    "pdf_tools.annotate_rect",
+]
