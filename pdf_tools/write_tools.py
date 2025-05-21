@@ -118,7 +118,12 @@ def replace_text(
             if matching_spans:
                 best_span = matching_spans[0]
                 replacements.append(
-                    {"bbox": inst, "font": best_span["font"], "size": best_span["size"]}
+                    {
+                        "bbox": inst,
+                        "font": best_span["font"],
+                        "size": best_span["size"],
+                        "origin": best_span["origin"],
+                    }
                 )
 
         # Redact all at once
@@ -129,7 +134,7 @@ def replace_text(
         # Insert new text
         for r in replacements:
             page.insert_text(
-                (r["bbox"].x0, r["bbox"].y0),
+                (r["bbox"].x0, r["origin"][1]),
                 new_text,
                 fontname=parse_fontname(r["font"]),
                 fontsize=r["size"],
